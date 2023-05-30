@@ -1,0 +1,138 @@
+// $sky: #96DFFF;
+$sky: #48A6DE;
+$night: #151D28;
+$sun: #FFE600;
+$lune: #B5D5E3;
+$lune-dot: #7488A5;
+$radius-color: #FFFFFF15;
+
+$switch-container-width: 300px;
+$switch-container-height: 120px;
+$switch-container-padding: 15px;
+
+$sun-width: $switch-container-height - 2 * $switch-container-padding;
+$radius-translateX: $switch-container-width - $switch-container-height;
+$radius-3: $sun-width / 1.7;
+$radius-2: $sun-width / 2.5;
+$radius-1: $sun-width / 5;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+}
+
+.root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.switch-container{
+  background-color: $sky;
+  width: $switch-container-width;
+  height: $switch-container-height;
+  padding: $switch-container-padding;
+  border-radius: $switch-container-height /2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: all .5s;
+
+  .transparent{
+    position: absolute;
+    z-index: 2;
+    background-color: #00000000;
+    box-shadow: inset -2px -2px 0px #FFFFFFAA, inset 5px 5px 5px #000000AA;
+    border-radius: $switch-container-height /2;
+    width: 100%;
+    height: 100%;
+    margin-top: - $switch-container-padding;
+    margin-left: - $switch-container-padding;
+  }
+  img{
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    margin-top: - $switch-container-padding;
+    object-fit: contain;
+    transition: all .5s;
+  }
+
+  #img-day{
+    margin-left: $switch-container-padding;
+  }
+  .img-nigth-initial{
+    transform: translateY(- $switch-container-height);
+  }
+  .img-nigth-dark{
+    transform: translateY(0);
+  }
+  .img-day-dark{
+    transform: translateY($switch-container-height);
+  }
+
+  .sun{
+    position: absolute;
+    z-index: 3;
+    background-color: $sun;
+    width: $sun-width;
+    height: $sun-width;
+    border-radius: 50%;
+    box-shadow: 3px 3px 3px #000000AA, 0px 0px 0px $radius-1 $radius-color, 0px 0px 0px $radius-2 $radius-color, 0px 0px 0px $radius-3 $radius-color;
+    transition: transform .5s, box-shadow .5s;
+    cursor: pointer;
+  }
+  .sun-dark{
+    box-shadow: 0px 0px 0px #000000AA, 0px 0px 0px 35px $radius-color, 0px 0px 0px 60px $radius-color, 0px 0px 0px 90px $radius-color;
+    transform: translateX($switch-container-width - 2 * $switch-container-padding -$sun-width);
+  }
+  .lune{
+    position: absolute;
+    z-index: 4;
+    background-color: $lune;
+    width: $sun-width;
+    height: $sun-width;
+    border-radius: 50%;
+    transform: translateX(180px) translateY( - $sun-width*2);
+    transition: all .5s;
+    cursor: pointer;
+    .dot{
+      position: absolute;
+      background-color: $lune-dot;
+      border-radius: 50%;
+
+    }
+    .dot1{
+      width: $sun-width / 6;
+      height: $sun-width / 6;
+      right: $sun-width / 3;
+      top: $sun-width / 10 ;
+    }
+    .dot2{
+      width: ($sun-width / 4) + ($sun-width / 8);
+      height: ($sun-width / 4) + ($sun-width / 8);
+      left: $sun-width / 10;
+      top: ($sun-width / 6) + ($sun-width / 6);
+    }
+    .dot3{
+      width: ($sun-width / 6) + ($sun-width / 12);
+      height: ($sun-width / 6) + ($sun-width / 12);
+      right: $sun-width / 6;
+      bottom: $sun-width / 6 ;
+    }
+  }
+  .lune-dark{
+    transform: translateX(180px) translateY(0)
+  }
+
+}

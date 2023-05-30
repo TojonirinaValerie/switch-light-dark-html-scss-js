@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.switch-container {
+  background-color: #48A6DE;
+  width: 300px;
+  height: 120px;
+  padding: 15px;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.switch-container .transparent {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: inset -2px -2px 0px rgba(255, 255, 255, 0.6666666667), inset 5px 5px 5px rgba(0, 0, 0, 0.6666666667);
+  border-radius: 60px;
+  width: 100%;
+  height: 100%;
+  margin-top: -15px;
+  margin-left: -15px;
+}
+.switch-container img {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  margin-top: -15px;
+  object-fit: contain;
+  transition: all 0.5s;
+}
+.switch-container #img-day {
+  margin-left: 15px;
+}
+.switch-container .img-nigth-initial {
+  transform: translateY(-120px);
+}
+.switch-container .img-nigth-dark {
+  transform: translateY(0);
+}
+.switch-container .img-day-dark {
+  transform: translateY(120px);
+}
+.switch-container .sun {
+  position: absolute;
+  z-index: 3;
+  background-color: #FFE600;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6666666667), 0px 0px 0px 18px rgba(255, 255, 255, 0.0823529412), 0px 0px 0px 36px rgba(255, 255, 255, 0.0823529412), 0px 0px 0px 52.9411764706px rgba(255, 255, 255, 0.0823529412);
+  transition: transform 0.5s, box-shadow 0.5s;
+  cursor: pointer;
+}
+.switch-container .sun-dark {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6666666667), 0px 0px 0px 35px rgba(255, 255, 255, 0.0823529412), 0px 0px 0px 60px rgba(255, 255, 255, 0.0823529412), 0px 0px 0px 90px rgba(255, 255, 255, 0.0823529412);
+  transform: translateX(180px);
+}
+.switch-container .lune {
+  position: absolute;
+  z-index: 4;
+  background-color: #B5D5E3;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  transform: translateX(180px) translateY(-180px);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.switch-container .lune .dot {
+  position: absolute;
+  background-color: #7488A5;
+  border-radius: 50%;
+}
+.switch-container .lune .dot1 {
+  width: 15px;
+  height: 15px;
+  right: 30px;
+  top: 9px;
+}
+.switch-container .lune .dot2 {
+  width: 33.75px;
+  height: 33.75px;
+  left: 9px;
+  top: 30px;
+}
+.switch-container .lune .dot3 {
+  width: 22.5px;
+  height: 22.5px;
+  right: 15px;
+  bottom: 15px;
+}
+.switch-container .lune-dark {
+  transform: translateX(180px) translateY(0);
+}
+
+/*# sourceMappingURL=styles.css.map */
