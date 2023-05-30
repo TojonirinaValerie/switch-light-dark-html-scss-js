@@ -52,10 +52,10 @@ body {
 .switch-container #img-day {
   margin-left: 15px;
 }
-.switch-container .img-nigth-initial {
+.switch-container .img-night-initial {
   transform: translateY(-120px);
 }
-.switch-container .img-nigth-dark {
+.switch-container .img-night-dark {
   transform: translateY(0);
 }
 .switch-container .img-day-dark {

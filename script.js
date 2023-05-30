@@ -6,7 +6,7 @@ const switchContainer = document.getElementById("switch-container");
 const radiusColor = '#FFFFFF15';
 const sunWidth = getComputedStyle(sun, null).width;
 const imageDay = document.getElementById("img-day");
-const imageNigth = document.getElementById("img-nigth");
+const imagenight = document.getElementById("img-night");
 
 sun.addEventListener('click', () => {
   // Switch to Dark
@@ -15,17 +15,17 @@ sun.addEventListener('click', () => {
   switchContainer.style.backgroundColor = '#151D28';
   root.style.backgroundColor = '#333333';
   imageDay.classList.add('img-day-dark');
-  imageNigth.classList.add('img-nigth-dark');
+  imagenight.classList.add('img-night-dark');
   text.style.color = '#FFFFFF';
 });
 
 lune.addEventListener('click', ()=>{
-  // Switch to ligth
+  // Switch to light
   sun.classList.remove('sun-dark');
   lune.classList.remove('lune-dark');
   switchContainer.style.backgroundColor = '#48A6DE';
   root.style.backgroundColor = '#FFFFFF';
   imageDay.classList.remove('img-day-dark');
-  imageNigth.classList.remove('img-nigth-dark');
+  imagenight.classList.remove('img-night-dark');
   text.style.color = '#000000';
 });
